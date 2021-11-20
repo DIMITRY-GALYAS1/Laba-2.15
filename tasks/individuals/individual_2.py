@@ -33,9 +33,6 @@ if __name__ == '__main__':
             if len(lines) > number_of_rows:
                 lines.pop(0)
 
-        # Закрываем файл
-        f.close()
-
         # Печатаем последние строки из файла
         for line in lines:
             print(line, end="")
