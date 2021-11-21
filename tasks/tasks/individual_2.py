@@ -18,23 +18,24 @@ if __name__ == '__main__':
     # Задаем количество строк
     number_of_rows = 10
 
-    # Открываем файл
+    # Если передано нужное количество аргументво
     if len(sys.argv) == 2:
+        # Откываем файла
         with open(sys.argv[1], "r", encoding="utf-8") as f:
             z = f.readlines()
 
         # Создем список для хранения строк
-        lines = []
+        last_lines = []
         # Просматриваем каждую строку
         for line in z:
             # Добавляем прочитанную строку в список
-            lines.append(line)
+            last_lines.append(line)
             # Если строк больше, чем надо, то удаляем самую старую
-            if len(lines) > number_of_rows:
-                lines.pop(0)
+            if len(last_lines) > number_of_rows:
+                last_lines.pop(0)
 
         # Печатаем последние строки из файла
-        for line in lines:
+        for line in last_lines:
             print(line, end="")
     else:
         print("Ошибка, проверьте правильность ввода!")
